@@ -28,12 +28,12 @@ export default function Home() {
 
 {/*Paul Atreides unites */}
 
-<div className=" pt-10  container flex mx-auto pb-15 mt-8 ">
+<div className="  container flex  flex-wrap flex-col lg:flex-row px-4 gap-6 lg:items-center lg:justify-between mx-auto pb-15 mt-8 ">
  <div>
    <span className="bg-red-500 font-bold rounded-lg p-2">CINEMORA ENGINE</span>
   <span className="ps-2 text-yellow-500 font-bold">v3.4 Production Pipeline</span>
-  <h1 className="text-4xl pt-3 font-bold text-white">Discover, Log, and Curate Without Distraction</h1>
-  <h3 className="text-red-400  pt-3">Built for cinephiles who value detailed technical metadata, crew credits, aspect ratio <br /> catalogs, and high-fidelity poster art. Create custom lists or sync your personal ratings.</h3>
+  <h1 className="pt-3 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">Discover, Log, and Curate Without Distraction</h1>
+  <p className="text-red-400  max-w-2xl pt-3 ">Built for cinephiles who value detailed technical metadata, crew credits, aspect ratio <br /> catalogs, and high-fidelity poster art. Create custom lists or sync your personal ratings.</p>
  </div>
  <div className="flex items-center gap-4 ps-10">
  

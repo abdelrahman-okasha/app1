@@ -4,7 +4,7 @@ export default function DashBord() {
   return <>
   {/* dashbord */}
 <div className='container mx-auto mt-20   '>
-    <div className=' grid grid-cols-4 gap-4 '>
+    <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 '>
         <div className='  flex items-center bg-neutral-800 ms-3 rounded-xl mt-8 w-fit p-4'>
           <div>  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-red-500">
   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
