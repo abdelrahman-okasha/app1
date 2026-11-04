@@ -2,17 +2,19 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useFavorites } from "@/context/FavoritesContext";
 
 const links = [
   { href: "/", content: "Home" },
   { href: "/movies", content: "Movies" },
   { href: "/tv-showes", content: "TV Shows" },
   { href: "/genres", content: "Genres" },
-  { href: "/watchlist", content: "Watch List" },
+  { href: "/favorites", content: "Favorites" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { favorites } = useFavorites();
 
   return (
     <nav className="bg-black text-white">
@@ -39,7 +41,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* اللينكات (لابتوب بس) */}
+        {/* اللينكات */}
         <ul className="hidden items-center gap-8 font-medium lg:flex">
           {links.map((link) => (
             <li key={link.href}>
@@ -59,12 +61,37 @@ export default function Navbar() {
                 <path stroke="currentColor" strokeLinecap="round" strokeWidth={2} d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
               </svg>
             </div>
+
             <input
               type="text"
               placeholder="Search"
               className="block w-56 rounded-lg border border-neutral-800 bg-neutral-900 py-2.5 pe-3 ps-9 text-sm text-white placeholder:text-gray-400 focus:border-white focus:outline-none"
             />
           </div>
+
+          {/* المفضلة */}
+          <Link href="/favorites" aria-label="Favorites" className="relative shrink-0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill={favorites.length > 0 ? "currentColor" : "none"}
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6 text-red-500"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+              />
+            </svg>
+
+            {favorites.length > 0 && (
+              <span className="absolute -right-2 -top-2 flex size-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
+                {favorites.length}
+              </span>
+            )}
+          </Link>
 
           {/* الجرس */}
           <button type="button" aria-label="Notifications" className="shrink-0">
