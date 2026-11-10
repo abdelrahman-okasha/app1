@@ -6,6 +6,8 @@ export default function PartTwo() {
   
   <div className="container mx-auto mt-20 px-4">
   {/* البادج */}
+
+
   <div className="w-fit max-w-full rounded-2xl bg-gray-400 ps-2 pe-3">
     <div className="flex items-center">
       <svg
@@ -104,7 +106,7 @@ export default function PartTwo() {
 
   {/* الأزرار */}
   <div className="mt-8 flex flex-wrap gap-3">
-    <div className="flex w-fit items-center rounded-xl bg-red-500 p-4">
+    <div className="flex w-fit items-center rounded-xl bg-red-500 p-4 hover:bg-yellow-300 duration-500">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -119,10 +121,10 @@ export default function PartTwo() {
           d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
         />
       </svg>
-      <button className="ps-2 text-white">Explore Details</button>
+      <button className="ps-2 text-white hover:text-blue-600 duration-500 ">Explore Details</button>
     </div>
 
-    <div className="flex w-fit items-center rounded-xl bg-neutral-800 p-4">
+    <div className="flex w-fit items-center rounded-xl bg-neutral-800 p-4 hover:bg-yellow-400 duration-500">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -137,17 +139,17 @@ export default function PartTwo() {
           d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
         />
       </svg>
-      <button className="ps-2 text-white">Add To Watchlist</button>
+      <button className="ps-2 text-white hover:text-black duration-500">Add To Watchlist</button>
     </div>
 
-    <div className="flex w-fit items-center rounded-xl bg-neutral-800 p-4">
+    <div className="flex w-fit items-center rounded-xl bg-neutral-800 p-4 hover:bg-yellow-400 duration-500">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="size-6"
+        className="size-6 text-white"
       >
         <path
           strokeLinecap="round"

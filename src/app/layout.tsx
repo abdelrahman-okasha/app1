@@ -4,6 +4,10 @@ import "./globals.css";
 import Navbar from "./_Component/Navbar/Navbar";
 import Footer from "./_Component/Footer/Footer";
 import { FavoritesProvider } from "@/context/FavoritesContext";
+import Providers from "./Provider/reactqurayprovider";
+
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,11 +31,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-black flex flex-col">
-        <FavoritesProvider>
+        <Providers>
+          <FavoritesProvider>
              <Navbar/>
         {children}
         <Footer/>
         </FavoritesProvider>
+        </Providers>
+        
 
         </body>
     </html>

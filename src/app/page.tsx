@@ -48,7 +48,9 @@ export default function Home() {
   <button className="rounded-xl bg-neutral-800 px-6 py-4 font-bold text-white hover:bg-neutral-700">
     Configure Filters
   </button>
+  
 </div>
+
 </div>
 
 

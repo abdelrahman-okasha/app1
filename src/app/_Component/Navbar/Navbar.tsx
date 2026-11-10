@@ -3,16 +3,22 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useFavorites } from "@/context/FavoritesContext";
+import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", content: "Home" },
   { href: "/movies", content: "Movies" },
   { href: "/tv-showes", content: "TV Shows" },
   { href: "/genres", content: "Genres" },
-  { href: "/favorites", content: "Favorites" },
+  { href: "/watchlist", content: "WatchList" },
 ];
 
 export default function Navbar() {
+  
+
+  const path = usePathname()
+  console.log(path)
+
   const [open, setOpen] = useState(false);
   const { favorites } = useFavorites();
 
@@ -44,8 +50,8 @@ export default function Navbar() {
         {/* اللينكات */}
         <ul className="hidden items-center gap-8 font-medium lg:flex">
           {links.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} className="text-red-400 hover:text-red-300">
+            <li key={link.href} className={path==link.href?'bg-red-600 text-white shadow-lg p-2 rounded-2xl':''}>
+              <Link href={link.href} >
                 {link.content}
               </Link>
             </li>
@@ -63,6 +69,7 @@ export default function Navbar() {
             </div>
 
             <input
+           
               type="text"
               placeholder="Search"
               className="block w-56 rounded-lg border border-neutral-800 bg-neutral-900 py-2.5 pe-3 ps-9 text-sm text-white placeholder:text-gray-400 focus:border-white focus:outline-none"

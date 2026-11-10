@@ -7,7 +7,14 @@ export default async function FilmDetails({params,}: {params: Promise<{ id: stri
   const movie = await res.json();
 
   return (
-    <div className="container mx-auto flex flex-col gap-6 px-4 pt-8  md:flex-row md:gap-8 text-white">
+    
+ <div className=" min-h-screen bg-cover bg-center bg-no-repeat"
+  style={{backgroundImage :movie.backdrop_path?`url(${process.env.IMAGE_URL}${movie.backdrop_path})`:'undefined'}}> 
+ 
+   
+ 
+    <div  className="min-h-screen bg-black/70">
+       <div className="container  mx-auto flex flex-col gap-6 px-4 pt-8  md:flex-row md:gap-8 text-white">
       <img
         className="w-full max-w-xs self-center rounded-xl md:w-72 md:self-start"
         src={`${process.env.IMAGE_URL}${movie.poster_path}`}
@@ -23,5 +30,7 @@ export default async function FilmDetails({params,}: {params: Promise<{ id: stri
         <p className="mt-4 max-w-xl">{movie.overview}</p>
       </div>
     </div>
+    </div>
+ </div>
   );
 }
