@@ -5,7 +5,15 @@ import { GenresTv } from '@/services/trindingtoday/GenresTv'
 
 
 export default async function Genres() {
-  const res = await fetch(`${process.env.API}/movie/top_rated?language=en-US&api_key=${process.env.API_KEY}`)
+  const res = await fetch(`${process.env.API}/movie/top_rated?language=en-US&api_key=${process.env.API_KEY}`,{
+    cache: 'no-store'
+  }
+  
+    
+  )
+  if (!res.ok) {
+    return <div className="text-white text-center py-10">Failed to load data</div>
+  }
     const {results}: PopularGenres = await res.json()
   return <>
   
